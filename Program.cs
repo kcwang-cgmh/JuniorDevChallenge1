@@ -4,6 +4,13 @@
     {
         static void Main()
         {
+            List<Student> students = GetStudentsData();
+
+            DisplayGrades(students);
+        }
+
+        private static List<Student> GetStudentsData()
+        {
             var students = new List<Student>();
             string addMoreStudents = "Y";
 
@@ -22,6 +29,11 @@
                 addMoreStudents = Console.ReadLine();
             }
 
+            return students;
+        }
+
+        private static void DisplayGrades(List<Student> students)
+        {
             // 根據學生成績輸出對應的等級
             for (int i = 0; i < students.Count; i++)
             {
